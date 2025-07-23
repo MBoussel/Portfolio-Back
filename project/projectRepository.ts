@@ -42,11 +42,12 @@ class ProjectRepository {
   }
 
   // The U of CRUD - Update operation
-  // TODO: Implement the update operation to modify an existing item
-
-  // async update(item: Item) {
-  //   ...
-  // }
+ async update(id:number, project:Partial<Project> ){
+  const [result] = await databaseClient.query<Result>(
+    "UPDATE projects SET titre = ?, description = ?, image = ?, url = ? WHERE id = ?",
+    [project.titre, project.description, project.image, project.url, id])
+  return result.affectedRows;
+ }
 
   // The D of CRUD - Delete operation
   // TODO: Implement the delete operation to remove an item by its ID

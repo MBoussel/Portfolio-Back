@@ -27,6 +27,17 @@ const read: RequestHandler = async (req, res, next) => {
     next(err);
   }
 };
+// THE E OF BREAD - Edit operation
+const edit : RequestHandler = async (req, res, next) => {
+  try{
+    const id = Number(req.params.id);
+    const updatedRows = await projectRepository.update(id, req.body);
+    if (updatedRows === 0) return res.sendStatus(404);
+res.sendStatus(204); 
+  }catch (err) {
+    next(err);
+  }
+};
 
 // The A of BREAD - Add (Create) operation
 const add: RequestHandler = async (req, res, next) => {
@@ -45,4 +56,4 @@ const add: RequestHandler = async (req, res, next) => {
   }
 };
 
-export default { browse, read, add };
+export default { browse, read, edit, add };
