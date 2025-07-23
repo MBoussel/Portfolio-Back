@@ -17,5 +17,17 @@ class SkillRepository {
           );
           return result.insertId;
      }
+     async read (id:number){
+          const[rows] = await databaseClient.query<Rows>(
+               "SELECT * FROM skills where id = ?",
+               [id],
+          );
+          return rows[0] as Skill;
+     }
+     async readAll(){
+          const [rows] = await databaseClient.query<Rows>(
+               "SELECT * FROM skills")
+          return rows as Skill[];
+          }
 }
 export default new SkillRepository();
