@@ -1,0 +1,13 @@
+USE portfolio;
+CREATE TABLE projects (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  titre VARCHAR(255) NOT NULL,
+  description TEXT,
+  image VARCHAR(255)
+);
+
+CREATE TABLE skills (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  nom VARCHAR(100) NOT NULL,
+  logo VARCHAR(100) NOT NULL
+);
