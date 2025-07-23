@@ -55,5 +55,16 @@ const add: RequestHandler = async (req, res, next) => {
     next(err);
   }
 };
+// The D of BREAD - Delete operation
 
-export default { browse, read, edit, add };
+const destroy : RequestHandler = async (req, res, next) => {
+  try {
+    const projectId = Number(req.params.id);
+    const deletedRows = await projectRepository.deleteProject(projectId);
+    if (deletedRows === 0) return res.sendStatus(404);
+    res.sendStatus(204);
+  }catch(err){
+    next(err)
+  }
+}
+export default { browse, read, edit, add, destroy };

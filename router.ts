@@ -9,6 +9,7 @@ router.get("/api/projects", projectActions.browse);
 router.get("/api/projects/:id", projectActions.read);
 router.post("/api/projects", projectActions.add);
 router.put("/api/projects/:id", projectActions.edit);
+router.delete("/api/projects/:id", projectActions.destroy);
 
 //Routes Skills
 router.get("/api/skills", skillActions.browse)
