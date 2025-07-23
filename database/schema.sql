@@ -3,7 +3,8 @@ CREATE TABLE projects (
   id INT AUTO_INCREMENT PRIMARY KEY,
   titre VARCHAR(255) NOT NULL,
   description TEXT,
-  image VARCHAR(255)
+  image VARCHAR(255),
+  url VARCHAR(255)
 );
 
 CREATE TABLE skills (

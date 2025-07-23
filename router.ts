@@ -7,7 +7,7 @@ const router =express.Router();
 //Routes Projects
 router.get("/api/projects", projectActions.browse);
 router.get("/api/projects/:id", projectActions.read);
-router.post("/api/project", projectActions.add);
+router.post("/api/projects", projectActions.add);
 
 //Routes Skills
 router.get("/api/skills", skillActions.browse)
