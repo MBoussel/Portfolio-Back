@@ -18,4 +18,7 @@ router.get("/api/skills", skillActions.browse)
 router.get("/api/skills/:id", skillActions.read);
 router.post("/api/skills",validateSkills, skillActions.add)
 
+//Routes Projects With Skills
+router.get("/api/projects-with-skills", projectActions.getProjectsWithSkills)
+
 export default router

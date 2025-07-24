@@ -4,3 +4,6 @@ INSERT INTO projects (titre, description, image) VALUES
 
 INSERT INTO skills (nom, logo) VALUES
 ('HTML5', 'devicon-html5-plain'),
+
+INSERT INTO projects_skills (projects_id, skills_id) VALUES
+(1, 1)

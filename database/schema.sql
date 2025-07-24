@@ -12,3 +12,11 @@ CREATE TABLE skills (
   nom VARCHAR(100) NOT NULL,
   logo VARCHAR(100) NOT NULL
 );
+
+CREATE TABLE projects_skills (
+  projects_id INT NOT NULL,
+  skills_id INT NOT NULL,
+  PRIMARY KEY (projects_id, skills_id),
+  FOREIGN KEY (projects_id) REFERENCES projects(id) ON DELETE CASCADE,
+  FOREIGN KEY (skills_id) REFERENCES skills(id) ON DELETE CASCADE
+);
