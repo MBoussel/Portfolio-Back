@@ -57,6 +57,14 @@ async deleteProject(id:number){
   );
   return result.affectedRows
 }
+
+// GET - Project with Skills
+async projectsWithSkills () {
+  const [rows] = await databaseClient.query<Result>(
+    "SELECT p.id AS projects_id, p.titre AS projects_titre, p.description AS projects_description, p.image AS projects_image, p.url AS projects_url, s.id AS skills_id, s.nom AS skills_nom, s.logo AS skills_logo FROM projects AS p LEFT JOIN projects_skills AS ps ON ps.projects_id = p.id LEFT JOIN skills AS s ON s.id = ps.skills_id"
+  );
+  return rows;
+}
 }
 
 export default new ProjectRepository();
