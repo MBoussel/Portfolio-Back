@@ -68,14 +68,5 @@ const destroy : RequestHandler = async (req, res, next) => {
   }
 }
 
-// GET - Project with Skills
-const getProjectsWithSkills: RequestHandler = async (req, res, next) => {
-  try {
-    const projects = await projectRepository.projectsWithSkills();
-    res.json(projects)
-  }catch (err){
-    next(err)
-  }
-}
 
-export default { browse, read, edit, add, destroy, getProjectsWithSkills };
+export default { browse, read, edit, add, destroy };

@@ -6,8 +6,8 @@ type Project = {
   id: number;
   titre: string;
   description: string;
-  image:string;
-  url:string;
+  image: string;
+  url: string;
 };
 
 class ProjectRepository {
